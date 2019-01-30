@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-md navbar-inverse  fixed-top">
+    <a class="navbar-brand" href="#">Webshop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                <div class="dropdown-menu animated fadeIn" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="#" ng-repeat="category in nb.category track by $index"  ng-click="nb.getCategory(category.category_name)">
+                        <span style="color: black;">
+                            {{category.category_name}}
+                        </span>
+                    </a>
+                </div>
+            </li>
+            <a ui-sref="addProduct">
+                <button class="btn btn-primary navbar-btn" ui-sref-active="active" ng-show="nb.admin && nb.loggedIn">Add Product</button>
+            </a>
+            <a ui-sref="adminPanel">
+                <button class="btn btn-danger navbar-btn" style="margin-left: 1em;" ui-sref-active="active" ui-sref="adminpanel" ng-show="nb.admin && nb.loggedIn">Admin panel</button>
+            </a>
+           
+                
+        </ul>
+
+        
+        
+        <ul class="nav navbar-nav navbar-right">
+             <li class="nav-item" ui-sref-active="active" ng-show="!nb.loggedIn">
+                    <button class="but" ui-sref="registration">Register</button>
+                </li>
+                <li class="nav-item" ui-sref-active="active" ng-show="!nb.loggedIn">
+                    <button class="but" ui-sref="login">Login</button>
+                </li>
+            <li class="nav-item" ui-sref-active="active" ng-show="nb.loggedIn && !nb.admin">
+                <a class="nav-link" style="color:rgb(87, 118, 253);" ui-sref="userProfile">{{nb.user.username}}</a>
+            </li>
+            <li class="nav-item" ui-sref-active="active" ng-show="nb.loggedIn && nb.admin">
+                <a class="nav-link" style="color:rgba(242, 38, 19, 1);">{{nb.user.name}}</a>
+            </li>
+            <li class="nav-item" ui-sref-active="active" ng-show="nb.loggedIn && nb.admin">
+                    <img class="float-left mr-3" src="media/avatars/user_1.png" ui-sref="userProfile" width="40" height="40">
+                </li>
+                <li class="nav-item" ui-sref-active="active" ng-show="nb.loggedIn && !nb.admin">
+                    <img class="float-left mr-3" src="media/avatars/user_1.png" ui-sref="userProfile" width="40" height="40">
+                </li>
+            <li class="nav-item" ng-show="nb.loggedIn">
+                    <button class="but" href="" ng-click="nb.logout()">Logout</button>
+                </li>
+        </ul>
+
+    </div>
+</nav>

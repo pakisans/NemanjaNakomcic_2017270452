@@ -1,0 +1,41 @@
+<div class="profilecs">
+    <br style="clear:both">
+            <h3 style="margin-bottom: 25px; text-align: center;">User Profile</h3>
+    <div class="userform">
+
+        <img class="float-left mr-3" src="media/avatars/user_1.png" width="64" height="64">
+        <p>Name: {{up.user.name}}</p>
+        <p>Lastname: {{up.user.lastname}}</p>
+        <p style="margin-left: 16.5%">Email: {{up.user.email}}</p>
+        <p style="margin-left: 16.5%">Money: {{up.user.moneyy}}</p>
+    
+    <div class="col-md-5">
+    <form ng-submit="up.changeProfile()">
+        <div class="form-group">
+            
+            <input type="text" name="username" id="username" class="form-control" placeholder="Username" ng-model="up.editUser.username">
+        </div>
+        <div class="form-group">
+            
+            <input type="text" name="password" id="password" class="form-control" placeholder="Password" ng-model="up.editUser.password">
+        </div>
+        <div class="form-group">
+            
+            <input type="text" name="name" id="name" class="form-control" placeholder="Name" ng-model="up.editUser.name">
+        </div>
+        <div class="form-group">
+            
+            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Lastname" ng-model="up.editUser.lastname">
+        </div>
+        <div class="form-group">
+            
+            <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" ng-model="up.editUser.email">
+        </div>
+            <center><input type="submit" class="btn btn-primary" value="Update"></center>
+        </div>
+    </form>
+    </div>
+</div>
+</div>
+</div>
+

@@ -1,0 +1,56 @@
+	<div class="itemspage" >
+		<div>
+		<a href="/" title="Back to home page">
+    		<img src="media/images/webshop.png" class="imgweb" alt="webshop">
+    	</a>
+                <center><span>
+                    <section class="webdesigntuts-workshop">
+                        <form action="" method="">          
+                        <input type="search" placeholder="What are you looking for?" ng-model="its.searchParams.name">               
+                        <button>Search</button>
+                        </form>
+                    </section>
+                </span></center> 
+                <div style="margin-top: 2%">
+            <center>
+                <div role="alert">
+                    <h3>Sort by: </h3>
+                    <select ng-model="sortColumn" class="btn">
+                        <option value="name">Name</option>
+                        <option value="-price">Price (higher)</option>
+                        <option value="+price">Price (lower)</option>
+                    </select>
+            </div></center></div>
+
+    	
+    	
+		<div class="line"></div>
+        <h1 style="margin-left: 2%;">Last added</h1>
+		<div class="cardbody" ng-repeat="item in its.items | filter: { name: its.search, category_name: its.oneCategory } | orderBy:sortColumn ">
+                <div class="btn-group" style="margin-left: 23%;">
+                    <button type="button" class="btn btn-sm btn-primary" ng-show="its.admin && its.loggedIn">Edit
+                        <span aria-hidden="true"></span></button>
+                    <button type="button" class="btn btn-sm btn-danger" ng-show="its.admin && its.loggedIn">Delete
+                        <span aria-hidden="true"></span></button>
+                </div>
+                <div class="cardimage">
+                    <img ng-src="{{item.image}}" class="img-fluid" alt="">
+                </div>
+
+                <div class="cardtext">
+                    <center><h3 style="margin-left: 1%">{{item.name}}</h3></center>
+                    <h4 style="margin-left: 3%"><b>Price: {{item.price}} &euro;</b></h4>
+                    <p class="card-text" style="margin-left: 3%;margin-right: 3%;">{{item.description}}</p>
+
+                </div>
+                <button type="button" class="btn btn-md btn-link" style="margin-top:2%;float: right; margin-right: 3%;margin-bottom: 2%;" ui-sref="item({id:item.id})">View more</button>
+
+                </div>
+
+	</div>
+	
+		
+	
+	
+
+

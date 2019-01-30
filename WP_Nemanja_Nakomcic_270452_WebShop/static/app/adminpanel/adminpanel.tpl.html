@@ -1,0 +1,123 @@
+<div class="adminpanel">
+	<div class="line"></div>
+	<div style="float:right; right:18%; z-index:1000; position:relative">
+	    <button class="btn btn-primary btn-md" type="button" ng-click="ap.usersView()">View</button>
+	    <button class="btn btn-danger btn-md" type="button" ng-click="ap.usersEdit()">Edit</button>
+	</div>
+	<div class="container">
+	<div class="col-md-8 col-md-offset-2">
+	        <table class="table table-striped table-dark"">
+	            <thead style="bapkground-color:rgb(253, 247, 241)">
+	                <tr>
+	                <th>Username</th>
+	                <th>Email</th>
+	                <th>Role</th>
+	                <th>Name</th>
+	                <th>Lastname</th>
+	                <th>Money</th>
+	                </tr>
+	            </thead>
+	            <tbody ng-show="ap.usersEditBool">
+	                <tr ng-repeat="user in ap.users">
+	                <td><input type="text" ng-model="user.username"></td>
+	                <td><input type="text" ng-model="user.email"></td>
+	                <td>{{user.role}}</td>
+	                <td><input type="text" ng-model="user.name"></td>
+	                <td><input type="text" ng-model="user.lastname"></td>
+	                <td><input type="text" ng-model="user.moneyy"></td>
+	                <td><button type="button" class="btn btn-primary btn-sm" ng-click="ap.admChangeUser(user)">Change</button></td>
+	                <td><button ng-click="ap.deleteUser(user.id)" type="button" class="btn float-left btn-danger btn-sm">X</button></td>
+	                </tr>
+	            </tbody>
+	            <tbody ng-show="!ap.usersEditBool">
+	                <tr ng-repeat="user in ap.users">
+	                <td>{{user.username}}</td>
+	                <td>{{user.email}}</td>
+	                <td>{{user.role}}</td>
+	                <td>{{user.name}}</td>
+	                <td>{{user.lastname}}</td>
+	                <td>{{user.moneyy}}</td>
+	                </tr>
+	            </tbody>
+	            </table>
+	    </div>
+	</div>
+	<div class="line"></div>
+
+	<div style="float:right; right:22%; z-index:1000; position:relative">
+    <button class="btn btn-primary btn-md" type="button" ng-click="ap.itemsView()">View</button>
+    <button class="btn btn-danger btn-md" type="button" ng-click="ap.itemsEdit()">Edit</button>
+</div>
+	<div class="container">
+        <div class="col-md-8 col-md-offset-2">
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-show="ap.itemsEditBool">
+                        <tr ng-repeat="item in ap.items">
+                        <td><input type="text" ng-model="item.name"></td>
+                        <td><input type="text" ng-model="item.description"></td>
+                        <td><input type="text" ng-model="item.image"></td>
+                        <td><input type="text" ng-model="item.price"></td>
+                        <td><input type="text" ng-model="item.name"></td>
+                        <td><input type="text" ng-model="item.quantity"></td>
+                        <td><button type="button" class="btn btn-primary btn-sm" ng-click="ap.admChangeItem(item)">Change</button></td>
+                        <td><button ng-click="ap.deleteItem(item.id)" type="button" class="btn float-left btn-danger btn-sm">X</button></td>
+                        </tr>
+                    </tbody>
+                    <tbody ng-show="!ap.itemsEditBool">
+                        <tr ng-repeat="item in ap.items">
+                        <td>{{item.name}}</td>
+                        <td>{{item.description}}</td>
+                        <td class="maxword">{{item.image}}</td>
+                        <td>{{item.price}}</td>
+                        <td>{{item.quantity}}</td>
+                        </tr>
+                    </tbody>
+                    </table>
+            </div>
+        
+	</div>
+	<div class="line"></div>
+	<div style="float:right; right:22%; z-index:1000; position:relative">
+    <button class="btn btn-primary btn-md" type="button" ng-click="ap.categoryView()">View</button>
+    <button class="btn btn-danger btn-md" type="button" ng-click="ap.categoryEdit()">Edit</button>
+	</div>
+	<div class="container">
+        <div class="col-md-8 col-md-offset-2">
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                        <th>Category Name</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-show="ap.categoryEditBool">
+                        <tr ng-repeat="category in ap.category">
+                        <td><input type="text" ng-model="category.category_name"></td>
+                        <td><button type="button" class="btn btn-primary btn-sm" ng-click="ap.admChangeCategory(category)">Change</button></td>
+                        <td><button ng-click="ap.deleteCategory(category.id)" type="button" class="btn float-left btn-danger btn-sm">X</button></td>
+                        </tr>
+                        <tr>
+                        <td><input type="text" ng-model="ap.newCtg.category_name"></td>
+                        <td><button type="button" class="btn btn-success btn-sm" ng-click="ap.addNewCategory(ap.newCtg)">Add</button></td>
+                        </tr>
+                    </tbody>
+                    <tbody ng-show="!ap.categoryEditBool">
+                        <tr ng-repeat="category in ap.category">
+                        <td>{{category.category_name}}</td>
+                        </tr>
+                    </tbody>
+                    </table>
+            </div>
+        
+	</div>
+	<div class="line"></div>
+
+</div>

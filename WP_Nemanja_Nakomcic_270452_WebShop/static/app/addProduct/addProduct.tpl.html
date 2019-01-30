@@ -1,0 +1,37 @@
+<div class="profilecs">
+    <br style="clear:both">
+            <h3 style="margin-bottom: 25px; text-align: center;">New Product</h3>
+	<center><div class="form-area"></div>
+	<div class="col-md-5">
+        <form ng-submit="adp.addNewProduct()">
+        
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Name" ng-required="true" ng-model="adp.newItem.name">
+            </div>
+
+            <div class="form-group">
+                    <select class="form-control" id="category" name="category" ng-options="category.category_name for category in adp.category track by category.id" ng-model="adp.newItem.category_name">
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <textarea class="form-control" type="textarea" id="message" placeholder="Describe" rows="7" ng-required="true" ng-model="adp.newItem.description"></textarea>                    
+            </div>
+            <div class="form-group">
+                    <input type="number" class="form-control" id="price" name="price" placeholder="Price" ng-required="true" ng-model="adp.newItem.price">
+            </div>
+            <div class="form-group">
+            	<input type="number" class="form-control" id="quantity" name="quantity" placeholder="Quantity" ng-model="adp.newItem.quantity">
+            </div>
+            <div class="form-group">
+                    <input type="text" class="form-control" id="image" name="image" placeholder="Image(url)" ng-required="true" ng-model="adp.newItem.image">
+            </div>
+            
+            
+            <center><button type="submit" class="btn btn-primary">Add Product</button></center>
+        </form>
+    </div>
+    </div>
+</div>
+</div>

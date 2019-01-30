@@ -1,0 +1,18 @@
+<div class="profilecs">
+	<div class="itempos">
+		<center><h1>{{it.items.name}}</h1></center>
+		<center><img style="width: 400px;height: 400px;" src="{{it.items.image}}"></center>
+		<center><label>Description:</label>
+		<pre>{{it.items.description}}</pre>
+		<label>Price</label>
+		<h3>{{it.items.price}}</h3>
+		<label> Quantity</label>
+		<h3>{{it.items.quantity}}</h3>
+		<hr>
+		<label for="quantity">How many products do you want to buy?</label>
+		<div class="col-md-5">
+        <input type="number" min="0" max="it.items.quantity" class="form-control" name="quantity" placeholder="Quantity" ng-model="it.quantityBuy">
+    	</div>
+		<button class="btn btn-outline-success" ng-click="it.buy()" style="margin-top: 2%">Buy!</button></center>
+	</div>
+</div>
